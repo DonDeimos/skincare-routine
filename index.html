@@ -1,0 +1,831 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+<title>The Ordinary – Routine</title>
+
+<!-- PWA Meta Tags -->
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<meta name="apple-mobile-web-app-title" content="Meine Routine">
+<meta name="theme-color" content="#1a1a18">
+<meta name="mobile-web-app-capable" content="yes">
+<link rel="manifest" id="manifest-placeholder">
+
+<!-- Apple Touch Icon (inline SVG as data URI) -->
+<link rel="apple-touch-icon" href="data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%20512%20512%22%3E%0A%20%20%3C%21--%20Background%20--%3E%0A%20%20%3Crect%20width%3D%22512%22%20height%3D%22512%22%20rx%3D%2280%22%20fill%3D%22%231a1a18%22%2F%3E%0A%20%20%0A%20%20%3C%21--%20Neck%20--%3E%0A%20%20%3Crect%20x%3D%22210%22%20y%3D%22340%22%20width%3D%2292%22%20height%3D%2280%22%20rx%3D%2210%22%20fill%3D%22%238B5E3C%22%2F%3E%0A%20%20%0A%20%20%3C%21--%20Head%20--%3E%0A%20%20%3Cellipse%20cx%3D%22256%22%20cy%3D%22210%22%20rx%3D%22110%22%20ry%3D%22125%22%20fill%3D%22%238B5E3C%22%2F%3E%0A%20%20%0A%20%20%3C%21--%20Hair%20--%3E%0A%20%20%3Cellipse%20cx%3D%22256%22%20cy%3D%22105%22%20rx%3D%22110%22%20ry%3D%2250%22%20fill%3D%22%231a1008%22%2F%3E%0A%20%20%3Crect%20x%3D%22146%22%20y%3D%2290%22%20width%3D%2230%22%20height%3D%2280%22%20rx%3D%2215%22%20fill%3D%22%231a1008%22%2F%3E%0A%20%20%3Crect%20x%3D%22336%22%20y%3D%2290%22%20width%3D%2230%22%20height%3D%2280%22%20rx%3D%2215%22%20fill%3D%22%231a1008%22%2F%3E%0A%20%20%3Crect%20x%3D%22146%22%20y%3D%2290%22%20width%3D%22220%22%20height%3D%2240%22%20rx%3D%2210%22%20fill%3D%22%231a1008%22%2F%3E%0A%0A%20%20%3C%21--%20Ears%20--%3E%0A%20%20%3Cellipse%20cx%3D%22148%22%20cy%3D%22220%22%20rx%3D%2218%22%20ry%3D%2222%22%20fill%3D%22%237a5234%22%2F%3E%0A%20%20%3Cellipse%20cx%3D%22364%22%20cy%3D%22220%22%20rx%3D%2218%22%20ry%3D%2222%22%20fill%3D%22%237a5234%22%2F%3E%0A%0A%20%20%3C%21--%20Eyes%20--%3E%0A%20%20%3Cellipse%20cx%3D%22210%22%20cy%3D%22200%22%20rx%3D%2218%22%20ry%3D%2214%22%20fill%3D%22%23fff%22%2F%3E%0A%20%20%3Cellipse%20cx%3D%22302%22%20cy%3D%22200%22%20rx%3D%2218%22%20ry%3D%2214%22%20fill%3D%22%23fff%22%2F%3E%0A%20%20%3Ccircle%20cx%3D%22213%22%20cy%3D%22201%22%20r%3D%2210%22%20fill%3D%22%232a1a08%22%2F%3E%0A%20%20%3Ccircle%20cx%3D%22305%22%20cy%3D%22201%22%20r%3D%2210%22%20fill%3D%22%232a1a08%22%2F%3E%0A%20%20%3Ccircle%20cx%3D%22216%22%20cy%3D%22198%22%20r%3D%223%22%20fill%3D%22%23fff%22%2F%3E%0A%20%20%3Ccircle%20cx%3D%22308%22%20cy%3D%22198%22%20r%3D%223%22%20fill%3D%22%23fff%22%2F%3E%0A%0A%20%20%3C%21--%20Eyebrows%20--%3E%0A%20%20%3Cpath%20d%3D%22M190%20182%20Q210%20172%20230%20178%22%20stroke%3D%22%231a1008%22%20stroke-width%3D%226%22%20fill%3D%22none%22%20stroke-linecap%3D%22round%22%2F%3E%0A%20%20%3Cpath%20d%3D%22M282%20178%20Q302%20172%20322%20182%22%20stroke%3D%22%231a1008%22%20stroke-width%3D%226%22%20fill%3D%22none%22%20stroke-linecap%3D%22round%22%2F%3E%0A%0A%20%20%3C%21--%20Nose%20--%3E%0A%20%20%3Cellipse%20cx%3D%22256%22%20cy%3D%22238%22%20rx%3D%2212%22%20ry%3D%228%22%20fill%3D%22%237a5234%22%2F%3E%0A%20%20%3Cpath%20d%3D%22M244%20238%20Q256%20252%20268%20238%22%20stroke%3D%22%236a4428%22%20stroke-width%3D%223%22%20fill%3D%22none%22%20stroke-linecap%3D%22round%22%2F%3E%0A%0A%20%20%3C%21--%20Mustache%20--%3E%0A%20%20%3Cpath%20d%3D%22M220%20268%20Q256%20278%20292%20268%22%20stroke%3D%22%231a1008%22%20stroke-width%3D%229%22%20fill%3D%22none%22%20stroke-linecap%3D%22round%22%2F%3E%0A%0A%20%20%3C%21--%20Full%20dark%20beard%20--%3E%0A%20%20%3Cpath%20d%3D%22M155%20270%20Q148%20320%20160%20360%20Q200%20410%20256%20415%20Q312%20410%20352%20360%20Q364%20320%20357%20270%20Q320%20285%20256%20288%20Q192%20285%20155%20270Z%22%20fill%3D%22%231a1008%22%2F%3E%0A%20%20%0A%20%20%3C%21--%20Beard%20texture%20highlights%20--%3E%0A%20%20%3Cpath%20d%3D%22M190%20300%20Q200%20340%20210%20370%22%20stroke%3D%22%232a2010%22%20stroke-width%3D%222%22%20fill%3D%22none%22%20opacity%3D%220.5%22%2F%3E%0A%20%20%3Cpath%20d%3D%22M256%20295%20Q256%20345%20256%20380%22%20stroke%3D%22%232a2010%22%20stroke-width%3D%222%22%20fill%3D%22none%22%20opacity%3D%220.5%22%2F%3E%0A%20%20%3Cpath%20d%3D%22M320%20300%20Q310%20340%20300%20370%22%20stroke%3D%22%232a2010%22%20stroke-width%3D%222%22%20fill%3D%22none%22%20opacity%3D%220.5%22%2F%3E%0A%0A%20%20%3C%21--%20Cheek%20beard%20sides%20--%3E%0A%20%20%3Cellipse%20cx%3D%22168%22%20cy%3D%22255%22%20rx%3D%2225%22%20ry%3D%2230%22%20fill%3D%22%231a1008%22%2F%3E%0A%20%20%3Cellipse%20cx%3D%22344%22%20cy%3D%22255%22%20rx%3D%2225%22%20ry%3D%2230%22%20fill%3D%22%231a1008%22%2F%3E%0A%3C%2Fsvg%3E">
+
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;1,300&family=DM+Mono:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+:root {
+  --cream: #ddd8d0;
+  --warm: #232320;
+  --charcoal: #1a1a18;
+  --muted: #8a8680;
+  --line: rgba(255,255,255,0.08);
+  --gold: #c9a96e;
+  --blue: #6e8fad;
+  --red: #c97070;
+  --beard: #8b6f47;
+  --beard-light: rgba(139,111,71,0.1);
+  --beard-border: rgba(139,111,71,0.3);
+}
+
+body {
+  background: var(--charcoal);
+  font-family: 'Cormorant Garamond', Georgia, serif;
+  color: var(--cream);
+  min-height: 100vh;
+  padding-bottom: env(safe-area-inset-bottom);
+}
+
+/* ── HEADER ── */
+header {
+  background: var(--charcoal);
+  color: var(--cream);
+  padding: 36px 20px 28px;
+  text-align: center;
+}
+.brand {
+  font-family: 'DM Mono', monospace;
+  font-size: 9px;
+  letter-spacing: 4px;
+  text-transform: uppercase;
+  color: var(--gold);
+  margin-bottom: 10px;
+}
+h1 { font-size: clamp(24px, 7vw, 40px); font-weight: 300; }
+h1 em { font-style: italic; color: var(--gold); }
+
+/* ── BEARD TOGGLE BAR ── */
+.beard-bar {
+  background: var(--charcoal);
+  padding: 0 20px 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  border-bottom: 3px solid var(--beard);
+  transition: border-color 0.3s;
+}
+.beard-bar.inactive { border-bottom-color: rgba(139,111,71,0.2); }
+
+.toggle-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background: rgba(255,255,255,0.05);
+  border: 1px solid rgba(255,255,255,0.08);
+  border-radius: 4px;
+  padding: 12px 16px;
+  transition: all 0.3s;
+}
+.toggle-row.disabled {
+  opacity: 0.35;
+  pointer-events: none;
+}
+.toggle-row.beard-active {
+  border-color: var(--beard-border);
+  background: var(--beard-light);
+}
+
+.toggle-label {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+.toggle-icon-big { font-size: 20px; }
+.toggle-text {}
+.toggle-title {
+  font-family: 'DM Mono', monospace;
+  font-size: 10px;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: var(--cream);
+  margin-bottom: 2px;
+}
+.toggle-desc {
+  font-family: 'DM Mono', monospace;
+  font-size: 8px;
+  letter-spacing: 1px;
+  color: rgba(247,243,238,0.35);
+}
+
+/* iOS-style switch */
+.switch {
+  position: relative;
+  width: 48px;
+  height: 26px;
+  flex-shrink: 0;
+}
+.switch input { opacity: 0; width: 0; height: 0; }
+.slider {
+  position: absolute;
+  inset: 0;
+  background: rgba(255,255,255,0.15);
+  border-radius: 26px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+.slider::before {
+  content: '';
+  position: absolute;
+  width: 20px; height: 20px;
+  left: 3px; top: 3px;
+  background: white;
+  border-radius: 50%;
+  transition: 0.3s;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.3);
+}
+input:checked + .slider { background: var(--beard); }
+input:checked + .slider::before { transform: translateX(22px); }
+
+/* ── DAY SELECTOR ── */
+.day-section {
+  background: var(--charcoal);
+  padding: 0 20px 24px;
+  border-bottom: 3px solid var(--gold);
+}
+.day-label {
+  font-family: 'DM Mono', monospace;
+  font-size: 9px;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  color: rgba(247,243,238,0.4);
+  text-align: center;
+  margin-bottom: 14px;
+  padding-top: 20px;
+}
+.days { display: flex; gap: 6px; justify-content: center; flex-wrap: wrap; }
+.day-btn {
+  font-family: 'DM Mono', monospace;
+  font-size: 10px;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  padding: 8px 10px;
+  border: 1px solid rgba(247,243,238,0.15);
+  background: transparent;
+  color: rgba(247,243,238,0.5);
+  cursor: pointer;
+  border-radius: 2px;
+  transition: all 0.2s;
+  min-width: 40px;
+}
+.day-btn:hover { border-color: rgba(247,243,238,0.4); color: var(--cream); }
+.day-btn.active { background: var(--gold); border-color: var(--gold); color: var(--charcoal); font-weight: 500; }
+
+/* ── DAY DISPLAY ── */
+.day-display {
+  background: var(--charcoal);
+  border-bottom: 1px solid rgba(247,243,238,0.08);
+  padding: 20px;
+  text-align: center;
+}
+.current-day { font-size: 32px; font-weight: 300; font-style: italic; color: var(--cream); }
+.day-sub { font-family: 'DM Mono', monospace; font-size: 9px; letter-spacing: 3px; color: rgba(247,243,238,0.4); text-transform: uppercase; margin-top: 4px; }
+
+/* ── TABS ── */
+.tabs { display: flex; border-bottom: 1px solid rgba(247,243,238,0.08); background: var(--charcoal); }
+.tab {
+  flex: 1; padding: 16px 8px;
+  font-family: 'DM Mono', monospace; font-size: 10px; letter-spacing: 2px; text-transform: uppercase;
+  cursor: pointer; border: none; background: transparent; color: rgba(247,243,238,0.35);
+  border-bottom: 2px solid transparent; transition: all 0.25s;
+}
+.tab.am.active { color: var(--gold); border-bottom-color: var(--gold); }
+.tab.pm.active { color: var(--blue); border-bottom-color: var(--blue); }
+
+/* ── MAIN ── */
+main { max-width: 560px; margin: 0 auto; padding: 0 20px 60px; background: var(--charcoal); }
+.routine-section { display: none; }
+.routine-section.visible { display: block; animation: up 0.3s ease; }
+@keyframes up { from { opacity:0; transform:translateY(12px); } to { opacity:1; transform:translateY(0); } }
+
+/* ── STEP ── */
+.step { border-bottom: 1px solid rgba(255,255,255,0.08); padding: 20px 0; }
+.step-header {
+  display: grid; grid-template-columns: 28px 1fr 20px; gap: 0 14px;
+  cursor: pointer; align-items: start;
+}
+.step-num { font-family: 'DM Mono', monospace; font-size: 10px; color: var(--gold); padding-top: 4px; letter-spacing: 1px; }
+.step-title { font-size: 19px; font-weight: 400; line-height: 1.2; color: #ddd8d0; }
+.step-sub { font-family: 'DM Mono', monospace; font-size: 8px; letter-spacing: 2px; text-transform: uppercase; color: var(--muted); margin-top: 3px; }
+.toggle-icon { font-size: 18px; color: var(--charcoal); transition: transform 0.3s; padding-top: 2px; text-align: right; }
+.step.open .toggle-icon { transform: rotate(45deg); }
+
+.step-body {
+  max-height: 0; overflow: hidden;
+  transition: max-height 0.4s ease, opacity 0.3s;
+  opacity: 0; padding-left: 42px;
+}
+.step.open .step-body { max-height: 800px; opacity: 1; margin-top: 14px; }
+
+/* amount */
+.amount-pill {
+  display: inline-flex; align-items: center; gap: 6px;
+  padding: 5px 12px; border-radius: 2px;
+  font-family: 'DM Mono', monospace; font-size: 10px; letter-spacing: 1px;
+  margin-bottom: 4px;
+}
+.amount-pill.am { background: var(--gold); color: var(--charcoal); }
+.amount-pill.pm { background: var(--blue); color: #fff; }
+.amount-pill.neutral { background: rgba(255,255,255,0.1); color: var(--cream); }
+.amount-pill.beard-amount { background: var(--beard); color: #fff; }
+
+.amount-wrapper { margin-bottom: 12px; }
+.amount-change-label {
+  font-family: 'DM Mono', monospace; font-size: 8px; letter-spacing: 1px;
+  color: var(--beard); margin-top: 4px; display: none;
+}
+.amount-change-label.visible { display: block; }
+
+.step-desc { font-size: 15px; line-height: 1.75; color: rgba(220,215,208,0.85); }
+
+/* beard tip block */
+.beard-tip {
+  margin-top: 12px;
+  padding: 12px 14px;
+  background: var(--beard-light);
+  border: 1px solid var(--beard-border);
+  border-left: 3px solid var(--beard);
+  border-radius: 2px;
+  display: none;
+}
+.beard-tip.visible { display: block; animation: fadeIn 0.3s ease; }
+@keyframes fadeIn { from { opacity:0; } to { opacity:1; } }
+.beard-tip-header {
+  font-family: 'DM Mono', monospace; font-size: 9px; letter-spacing: 2px;
+  text-transform: uppercase; color: var(--beard); margin-bottom: 6px;
+  display: flex; align-items: center; gap: 6px;
+}
+.beard-tip-text { font-size: 14px; line-height: 1.7; color: rgba(220,215,208,0.9); }
+
+/* zones */
+.zones-block { margin-top: 14px; border: 1px solid var(--line); border-radius: 2px; overflow: hidden; }
+.zones-title {
+  font-family: 'DM Mono', monospace; font-size: 9px; letter-spacing: 3px; text-transform: uppercase;
+  padding: 8px 12px; background: rgba(255,255,255,0.04); color: var(--muted); border-bottom: 1px solid var(--line);
+}
+.zones-list { padding: 10px 12px; display: flex; flex-wrap: wrap; gap: 6px; }
+.zone-tag {
+  font-family: 'DM Mono', monospace; font-size: 9px; letter-spacing: 1px;
+  padding: 4px 9px; border-radius: 2px; border: 1px solid var(--line);
+  cursor: default; transition: all 0.2s; background: rgba(255,255,255,0.06); color: rgba(220,215,208,0.85);
+}
+.zone-tag.problem {
+  border-color: rgba(201,112,112,0.3); background: rgba(201,112,112,0.06);
+  color: var(--red); cursor: pointer;
+}
+.zone-tag.problem::after { content: ' ⚠'; font-size: 8px; }
+.zone-tag.beard-zone {
+  border-color: var(--beard-border); background: var(--beard-light);
+  color: var(--beard);
+}
+.zone-tag.beard-zone::before { content: '🧔 '; font-size: 10px; }
+
+/* warn */
+.warn {
+  margin-top: 12px; font-family: 'DM Mono', monospace; font-size: 9px;
+  letter-spacing: 0.5px; line-height: 1.6; color: var(--gold);
+  background: rgba(201,169,110,0.1); padding: 8px 12px; border-left: 2px solid var(--gold);
+}
+.warn.danger { color: var(--red); background: rgba(201,112,112,0.08); border-left-color: var(--red); }
+
+/* ── MODAL ── */
+.modal-overlay {
+  display: none; position: fixed; inset: 0;
+  background: rgba(26,26,24,0.6); z-index: 100;
+  backdrop-filter: blur(2px); align-items: flex-end; justify-content: center;
+}
+.modal-overlay.open { display: flex; animation: fadeIn 0.2s ease; }
+.modal {
+  background: #2a2a27; width: 100%; max-width: 560px;
+  border-radius: 8px 8px 0 0; padding: 28px 24px 40px;
+  animation: slideUp 0.3s ease; max-height: 85vh; overflow-y: auto;
+}
+@keyframes slideUp { from { transform: translateY(40px); } to { transform: translateY(0); } }
+.modal-handle { width: 36px; height: 4px; background: rgba(255,255,255,0.15); border-radius: 2px; margin: 0 auto 20px; }
+.modal-badge {
+  display: inline-block; font-family: 'DM Mono', monospace; font-size: 9px;
+  letter-spacing: 3px; text-transform: uppercase;
+  background: rgba(201,112,112,0.1); color: var(--red);
+  padding: 4px 10px; border-radius: 2px; margin-bottom: 10px;
+}
+.modal-badge.beard { background: var(--beard-light); color: var(--beard); }
+.modal-title { font-size: 26px; font-style: italic; font-weight: 300; margin-bottom: 16px; color: var(--cream); }
+.modal-text { font-size: 15px; line-height: 1.8; color: rgba(220,215,208,0.85); }
+.modal-zones { margin-top: 18px; }
+.modal-zone-item { padding: 12px 0; border-top: 1px solid rgba(255,255,255,0.08); }
+.modal-zone-name { font-family: 'DM Mono', monospace; font-size: 10px; letter-spacing: 2px; text-transform: uppercase; color: var(--red); margin-bottom: 4px; }
+.modal-zone-name.beard { color: var(--beard); }
+.modal-zone-desc { font-size: 14px; line-height: 1.65; color: rgba(220,215,208,0.85); }
+.modal-close {
+  margin-top: 24px; width: 100%; padding: 14px;
+  font-family: 'DM Mono', monospace; font-size: 10px; letter-spacing: 2px; text-transform: uppercase;
+  background: var(--charcoal); color: var(--cream); border: none; cursor: pointer; border-radius: 2px;
+}
+</style>
+</head>
+<body>
+
+<header>
+  <div class="brand">The Ordinary · Deine Routine</div>
+  <h1>Wähle deinen <em>Tag</em></h1>
+</header>
+
+<!-- BEARD TOGGLES -->
+<div class="beard-bar inactive" id="beardBar">
+  <div class="toggle-row" id="beardToggleRow">
+    <div class="toggle-label">
+      <span class="toggle-icon-big">🧔</span>
+      <div class="toggle-text">
+        <div class="toggle-title">Bart-Modus</div>
+        <div class="toggle-desc">Zeigt Bart-Tipps bei jedem Schritt</div>
+      </div>
+    </div>
+    <label class="switch">
+      <input type="checkbox" id="beardToggle" onchange="onBeardChange()">
+      <span class="slider"></span>
+    </label>
+  </div>
+
+  <div class="toggle-row disabled" id="quantityToggleRow">
+    <div class="toggle-label">
+      <span class="toggle-icon-big">💧</span>
+      <div class="toggle-text">
+        <div class="toggle-title">Mengen anpassen</div>
+        <div class="toggle-desc">Mehr Produkt für Bart-Bereiche</div>
+      </div>
+    </div>
+    <label class="switch">
+      <input type="checkbox" id="quantityToggle" onchange="onQuantityChange()" disabled>
+      <span class="slider"></span>
+    </label>
+  </div>
+</div>
+
+<!-- DAY SELECTOR -->
+<div class="day-section">
+  <div class="day-label">Wochentag auswählen</div>
+  <div class="days">
+    <button class="day-btn" data-day="0" onclick="selectDay(0)">Mo</button>
+    <button class="day-btn" data-day="1" onclick="selectDay(1)">Di</button>
+    <button class="day-btn" data-day="2" onclick="selectDay(2)">Mi</button>
+    <button class="day-btn" data-day="3" onclick="selectDay(3)">Do</button>
+    <button class="day-btn" data-day="4" onclick="selectDay(4)">Fr</button>
+    <button class="day-btn" data-day="5" onclick="selectDay(5)">Sa</button>
+    <button class="day-btn" data-day="6" onclick="selectDay(6)">So</button>
+  </div>
+</div>
+
+<div class="day-display" id="dayDisplay" style="display:none">
+  <div class="current-day" id="currentDayName"></div>
+  <div class="day-sub" id="currentDaySub"></div>
+</div>
+
+<div class="tabs" id="tabBar" style="display:none">
+  <button class="tab am active" onclick="showTab('am')">☀️ Morgens</button>
+  <button class="tab pm" onclick="showTab('pm')">🌙 Abends</button>
+</div>
+
+<main>
+  <div class="routine-section visible" id="am"><div id="am-content"></div></div>
+  <div class="routine-section" id="pm"><div id="pm-content"></div></div>
+</main>
+
+<!-- MODAL: Problemzone -->
+<div class="modal-overlay" id="modal" onclick="closeModal(event)">
+  <div class="modal">
+    <div class="modal-handle"></div>
+    <div class="modal-badge">⚠ Problemzone</div>
+    <div class="modal-title">Was ist eine Problemzone?</div>
+    <div class="modal-text">Problemzonen sind Bereiche im Gesicht, die häufiger zu Unreinheiten, Pickeln, erweiterten Poren oder übermäßiger Talgproduktion neigen. Bei Männern sind diese Zonen oft ausgeprägter, da Testosteron die Talgdrüsen stimuliert.</div>
+    <div class="modal-zones">
+      <div class="modal-zone-item"><div class="modal-zone-name">T-Zone</div><div class="modal-zone-desc">Stirn, Nase und Kinn bilden ein „T". Diese Zone hat die meisten Talgdrüsen und glänzt oft – besonders nach Sport oder tagsüber.</div></div>
+      <div class="modal-zone-item"><div class="modal-zone-name">Nase</div><div class="modal-zone-desc">Besonders anfällig für Mitesser und verstopfte Poren. Salicylsäure kann hier tief in die Poren eindringen.</div></div>
+      <div class="modal-zone-item"><div class="modal-zone-name">Kinn & Kiefer</div><div class="modal-zone-desc">Bei Männern oft hormonell bedingte Pickel, besonders nach dem Rasieren. Eingewachsene Haare können ebenfalls Unreinheiten verursachen.</div></div>
+      <div class="modal-zone-item"><div class="modal-zone-name">Stirn</div><div class="modal-zone-desc">Oft betroffen durch Haarprodukte, Schweiß und Haare im Gesicht. Häufige Zone für kleine Pickel.</div></div>
+      <div class="modal-zone-item"><div class="modal-zone-name">Wangen</div><div class="modal-zone-desc">Meist trockener als die T-Zone, aber durch Bartrasur oft gereizt. Hier ist Feuchtigkeit wichtiger als intensive Wirkstoffe.</div></div>
+    </div>
+    <button class="modal-close" onclick="document.getElementById('modal').classList.remove('open')">Schließen</button>
+  </div>
+</div>
+
+<!-- MODAL: Bart-Zonen Info -->
+<div class="modal-overlay" id="beardModal" onclick="closeBeardModal(event)">
+  <div class="modal">
+    <div class="modal-handle"></div>
+    <div class="modal-badge beard">🧔 Bart-Modus</div>
+    <div class="modal-title">Pflege unter dem Bart</div>
+    <div class="modal-text">Der Bart schützt die Haut darunter nicht – im Gegenteil, Barthaar kann Talg, Bakterien und abgestorbene Hautzellen einschließen. Die Haut unter dem Bart braucht Pflege, oft sogar mehr als rasierte Haut.</div>
+    <div class="modal-zones">
+      <div class="modal-zone-item"><div class="modal-zone-name beard">Bartbereich allgemein</div><div class="modal-zone-desc">Produkte mit den Fingerspitzen sanft in den Bart einmassieren und bis zur Haut durcharbeiten. Am besten wenn die Haut noch leicht feucht ist – dann verteilt es sich leichter.</div></div>
+      <div class="modal-zone-item"><div class="modal-zone-name beard">Kinn & Kinnlinie</div><div class="modal-zone-desc">Besonders wichtige Zone – hier sammeln sich Talg und Bakterien. Bei langen Bärten gerne mit einem Bartöl kombinieren, das gleichzeitig Haar und Haut pflegt.</div></div>
+      <div class="modal-zone-item"><div class="modal-zone-name beard">Wangen unter dem Bart</div><div class="modal-zone-desc">Feuchtigkeitscreme unbedingt einarbeiten – trockene Haut unter dem Bart verursacht Juckreiz und Schüppchenbildung (Bartschuppen).</div></div>
+      <div class="modal-zone-item"><div class="modal-zone-name beard">Tipp: Bartöl</div><div class="modal-zone-desc">Als ergänzendes Produkt empfehlenswert – pflegt Barthaar und Haut gleichzeitig. Abends nach der Feuchtigkeitscreme auftragen.</div></div>
+    </div>
+    <button class="modal-close" onclick="document.getElementById('beardModal').classList.remove('open')">Schließen</button>
+  </div>
+</div>
+
+<script>
+const DAYS = ['Montag','Dienstag','Mittwoch','Donnerstag','Freitag','Samstag','Sonntag'];
+const DAYS_SHORT = ['Mo','Di','Mi','Do','Fr','Sa','So'];
+
+let selectedDay = null;
+let beardMode = false;
+let quantityMode = false;
+
+function getSalicylicDays() { return [0, 2, 4]; }
+
+window.addEventListener('DOMContentLoaded', () => {
+  const jsDay = new Date().getDay();
+  const myDay = jsDay === 0 ? 6 : jsDay - 1;
+  selectDay(myDay);
+});
+
+function onBeardChange() {
+  beardMode = document.getElementById('beardToggle').checked;
+  const qRow = document.getElementById('quantityToggleRow');
+  const qToggle = document.getElementById('quantityToggle');
+  const bar = document.getElementById('beardBar');
+
+  if (beardMode) {
+    qRow.classList.remove('disabled');
+    qToggle.disabled = false;
+    bar.classList.remove('inactive');
+    document.getElementById('beardToggleRow').classList.add('beard-active');
+  } else {
+    qRow.classList.add('disabled');
+    qToggle.disabled = true;
+    qToggle.checked = false;
+    quantityMode = false;
+    bar.classList.add('inactive');
+    document.getElementById('beardToggleRow').classList.remove('beard-active');
+    document.getElementById('quantityToggleRow').classList.remove('beard-active');
+  }
+  if (selectedDay !== null) renderRoutine(selectedDay);
+}
+
+function onQuantityChange() {
+  quantityMode = document.getElementById('quantityToggle').checked;
+  const qRow = document.getElementById('quantityToggleRow');
+  if (quantityMode) {
+    qRow.classList.add('beard-active');
+  } else {
+    qRow.classList.remove('beard-active');
+  }
+  if (selectedDay !== null) renderRoutine(selectedDay);
+}
+
+function selectDay(d) {
+  selectedDay = d;
+  document.querySelectorAll('.day-btn').forEach(b => b.classList.remove('active'));
+  document.querySelector(`.day-btn[data-day="${d}"]`).classList.add('active');
+
+  const isSalDay = getSalicylicDays().includes(d);
+  document.getElementById('dayDisplay').style.display = 'block';
+  document.getElementById('tabBar').style.display = 'flex';
+  document.getElementById('currentDayName').textContent = DAYS[d];
+  document.getElementById('currentDaySub').textContent = `Abends heute: ${isSalDay ? 'Salicylic Acid' : 'Balancing Serum'}`;
+
+  renderRoutine(d);
+}
+
+function showTab(tab) {
+  document.querySelectorAll('.routine-section').forEach(s => s.classList.remove('visible'));
+  document.querySelectorAll('.tab').forEach(t => t.classList.remove('active'));
+  document.getElementById(tab).classList.add('visible');
+  document.querySelector('.tab.' + tab).classList.add('active');
+}
+
+function renderRoutine(d) { renderAM(); renderPM(d); }
+
+// ── DATA ──
+function getAMSteps() {
+  return [
+    {
+      num: '01', name: 'Gesicht reinigen', sub: 'Vorbereitung · täglich',
+      amount: '💧 Lauwarmes Wasser + Reiniger',
+      amountBeard: '💧 Lauwarmes Wasser + Reiniger',
+      amountNote: null,
+      amClass: 'neutral',
+      desc: 'Gesicht mit lauwarmem Wasser und einem milden Reiniger waschen. Sanft trocken tupfen – nicht reiben.',
+      zones: [{ name: 'Gesamtes Gesicht', problem: false }, { name: 'Hals', problem: false }],
+      beardZones: [{ name: 'Bartbereich', beard: true }],
+      beardTip: 'Reiniger mit den Fingerspitzen tief in den Bart einmassieren und bis zur Haut durcharbeiten. Ein Bartshampoo oder mildes Bartseife kann helfen, die Haut darunter gründlich zu reinigen.',
+      warn: null,
+    },
+    {
+      num: '02', name: 'Niacinamide 10% + Zinc 1%', sub: 'Serum · täglich',
+      amount: '💊 3–4 Tropfen',
+      amountBeard: '💊 4–5 Tropfen',
+      amountNote: '+1 Tropfen extra für den Bartbereich',
+      amClass: 'am',
+      desc: 'Auf Fingerspitzen geben und gleichmäßig verteilen. Reduziert Rötungen, verfeinert Poren und reguliert Talg – besonders gut für die T-Zone.',
+      zones: [{ name: 'T-Zone', problem: true }, { name: 'Wangen', problem: false }, { name: 'Kinn & Kiefer', problem: true }, { name: 'Hals', problem: false }],
+      beardZones: [{ name: 'Unter dem Bart', beard: true }, { name: 'Kinnlinie', beard: true }],
+      beardTip: 'Mit den Fingerspitzen sanft in den Bart einmassieren bis du die Haut darunter spürst. Das Serum reguliert Talg auch unter dem Bart und beugt Bartpickeln vor.',
+      warn: '⏳ 30–60 Sek. einziehen lassen vor dem nächsten Schritt',
+    },
+    {
+      num: '03', name: 'Natural Moisturizing Factors + HA', sub: 'Feuchtigkeitscreme · täglich',
+      amount: '🫘 Erbsengross (~0.5 ml)',
+      amountBeard: '🫘 Etwas mehr (~0.8 ml)',
+      amountNote: 'Extra Menge für die Haut unter dem Bart',
+      amClass: 'am',
+      desc: 'Auf Stirn, Nase, Wangen und Kinn verteilen, sanft einmassieren. Bildet eine Feuchtigkeit-Basis für den Sonnenschutz.',
+      zones: [{ name: 'Gesamtes Gesicht', problem: false }, { name: 'Hals', problem: false }],
+      beardZones: [{ name: 'Unter dem Bart', beard: true }],
+      beardTip: 'Besonders wichtig! Trockene Haut unter dem Bart verursacht Juckreiz und Bartschuppen. Etwas mehr Creme nehmen und tief in den Bart einmassieren.',
+      warn: null,
+    },
+    {
+      num: '04', name: 'UV Filters SPF 45 Serum', sub: 'Sonnenschutz · täglich · LETZTER SCHRITT',
+      amount: '☀️ ¼ Teelöffel (~1.5 ml)',
+      amountBeard: '☀️ Etwas mehr (~2 ml)',
+      amountNote: 'Extra für freiliegende Bart-Randbereiche',
+      amClass: 'am',
+      desc: 'Immer als allerletzten Schritt. Sanft auftupfen bis es einzieht. Nicht einmassieren.',
+      zones: [{ name: 'Gesamtes Gesicht', problem: false }, { name: 'Hals', problem: false }, { name: 'Ohren', problem: false }],
+      beardZones: [{ name: 'Bartränder', beard: true }, { name: 'Freiliegende Haut', beard: true }],
+      beardTip: 'Unter dem Vollbart so weit wie möglich einarbeiten. Die Barthaare bieten etwas natürlichen UV-Schutz, aber die Ränder und freiliegende Haut unbedingt schützen.',
+      warn: '☀️ Jeden Morgen – auch bei Wolken & im Büro! UV-Strahlen durchdringen Fensterglas.',
+    },
+  ];
+}
+
+function getPMSteps(d) {
+  const isSalDay = getSalicylicDays().includes(d);
+  const base = [
+    {
+      num: '01', name: 'Doppelreinigung', sub: 'Vorbereitung · täglich',
+      amount: '🧴 Öl/Mizellar + Reiniger',
+      amountBeard: '🧴 Öl/Mizellar + Reiniger',
+      amountNote: null,
+      amClass: 'neutral',
+      desc: 'Zuerst mit Öl oder Mizellenwasser SPF lösen, dann mit mildem Reiniger waschen. SPF muss komplett entfernt werden.',
+      zones: [{ name: 'Gesamtes Gesicht', problem: false }, { name: 'Hals', problem: false }],
+      beardZones: [{ name: 'Tief in den Bart', beard: true }],
+      beardTip: 'Besonders gründlich reinigen: Öl zuerst in den Bart einmassieren um Talgablagerungen unter dem Bart zu lösen. Dann Reiniger bis zur Haut durcharbeiten.',
+      warn: null,
+    },
+  ];
+
+  const salStep = {
+    num: '02', name: 'Salicylic Acid 2% Anhydrous Solution', sub: 'Exfoliant · 3× pro Woche',
+    amount: '💧 2–3 Tropfen',
+    amountBeard: '💧 3–4 Tropfen',
+    amountNote: '+1 Tropfen für Problemzonen unter dem Bart',
+    amClass: 'pm',
+    desc: 'Nur auf Problemzonen – nicht auf das gesamte Gesicht! Punktuell mit Fingerspitze oder Wattestäbchen auftragen.',
+    zones: [{ name: 'T-Zone', problem: true }, { name: 'Nase', problem: true }, { name: 'Kinn & Kiefer', problem: true }, { name: 'Pickel/Mitesser', problem: true }],
+    beardZones: [{ name: 'Bartpickel', beard: true }, { name: 'Kinnlinie', beard: true }],
+    beardTip: 'Mit einem Wattestäbchen punktuell auf Bartpickel und eingewachsene Haare auftragen. Vorsichtig in die Kinnlinie einarbeiten. Hilft auch gegen eingewachsene Barthaare.',
+    warn: '⚠ NICHT auf gesamtes Gesicht – nur Problemzonen!',
+    warnClass: 'danger',
+  };
+
+  const balStep = {
+    num: '02', name: 'Balancing & Clarifying Serum', sub: 'Wirkstoffserum · 4× pro Woche',
+    amount: '💊 3–4 Tropfen',
+    amountBeard: '💊 4–5 Tropfen',
+    amountNote: '+1 Tropfen extra für den Bartbereich',
+    amClass: 'pm',
+    desc: 'An Abenden ohne Salicylsäure verwenden. Auf gesamtes Gesicht auftragen und sanft einmassieren.',
+    zones: [{ name: 'Gesamtes Gesicht', problem: false }, { name: 'T-Zone', problem: true }, { name: 'Wangen', problem: false }],
+    beardZones: [{ name: 'Unter dem Bart', beard: true }],
+    beardTip: 'Serum mit den Fingerspitzen tief in den Bart bis zur Haut einmassieren. Reguliert Talg unter dem Bart und hilft gegen Bartschuppen.',
+    warn: null,
+  };
+
+  const moist = {
+    num: '03', name: 'Natural Moisturizing Factors + HA', sub: 'Feuchtigkeitscreme · täglich',
+    amount: '🫘 Etwas mehr als morgens (~1 ml)',
+    amountBeard: '🫘 Grosszügig (~1.3 ml)',
+    amountNote: 'Extra Feuchtigkeit für die Haut unter dem Bart',
+    amClass: 'pm',
+    desc: 'Abends grosszügiger auftragen. Wirkstoffe können austrocknen – die Creme gleicht das aus.',
+    zones: [{ name: 'Gesamtes Gesicht', problem: false }, { name: 'Hals', problem: false }],
+    beardZones: [{ name: 'Unter dem Bart', beard: true }, { name: 'Kinnlinie', beard: true }],
+    beardTip: 'Abends ist die beste Zeit, um die Haut unter dem Bart intensiv zu pflegen. Die Creme tief einmassieren. Optional: danach ein paar Tropfen Bartöl auf den Bart – pflegt Haare und Haut gleichzeitig.',
+    warn: null,
+  };
+
+  return [...base, isSalDay ? salStep : balStep, moist];
+}
+
+function renderAM() {
+  document.getElementById('am-content').innerHTML = getAMSteps().map(s => renderStep(s, 'am')).join('');
+}
+
+function renderPM(d) {
+  const isSalDay = getSalicylicDays().includes(d);
+  const scheduleHTML = `
+    <div style="margin:20px 0 0;padding:14px;background:rgba(255,255,255,0.04);border-radius:2px;border:1px solid rgba(255,255,255,0.08);">
+      <div style="font-family:'DM Mono',monospace;font-size:9px;letter-spacing:3px;text-transform:uppercase;color:rgba(220,215,208,0.6);margin-bottom:10px;">Wochenplan</div>
+      <div style="display:flex;gap:4px;flex-wrap:wrap;">
+        ${DAYS.map((name, i) => {
+          const isSal = getSalicylicDays().includes(i);
+          const isActive = i === d;
+          return `<div style="font-family:'DM Mono',monospace;font-size:8px;letter-spacing:1px;padding:5px 8px;border-radius:2px;
+            border:1px solid ${isActive?(isSal?'var(--red)':'var(--blue)'):'var(--line)'};
+            background:${isActive?(isSal?'rgba(201,112,112,0.12)':'rgba(110,143,173,0.12)'):'rgba(255,255,255,0.04)'};
+            color:${isActive?(isSal?'var(--red)':'var(--blue)'):'rgba(220,215,208,0.5)'};
+            text-align:center;">
+            ${DAYS_SHORT[i]}<br><span style="font-size:7px;opacity:0.7">${isSal?'Sal.':'Bal.'}</span>
+          </div>`;
+        }).join('')}
+      </div>
+    </div>`;
+  document.getElementById('pm-content').innerHTML = scheduleHTML + getPMSteps(d).map(s => renderStep(s, 'pm')).join('');
+}
+
+function renderStep(s, mode) {
+  // Amount
+  const showBeardAmount = beardMode && quantityMode && s.amountBeard !== s.amount;
+  const displayAmount = showBeardAmount ? s.amountBeard : s.amount;
+  const pillClass = showBeardAmount ? 'beard-amount' : s.amClass;
+
+  const amountHTML = `
+    <div class="amount-wrapper">
+      <div class="amount-pill ${pillClass}">${displayAmount}</div>
+      ${s.amountNote && showBeardAmount ? `<div class="amount-change-label visible">🧔 ${s.amountNote}</div>` : ''}
+    </div>`;
+
+  // Zones
+  let zonesItems = [...s.zones];
+  if (beardMode && s.beardZones) {
+    zonesItems = [...zonesItems, ...s.beardZones.map(z => ({ name: z.name, problem: false, beard: true }))];
+  }
+  const zonesHTML = `
+    <div class="zones-block">
+      <div class="zones-title">Anwendungszonen${beardMode ? ' · 🧔 inkl. Bart' : ' — tippe ⚠ für Info'}</div>
+      <div class="zones-list">
+        ${zonesItems.map(z => z.beard
+          ? `<span class="zone-tag beard-zone" onclick="openBeardModal()" style="cursor:pointer">${z.name}</span>`
+          : `<span class="zone-tag ${z.problem ? 'problem' : ''}" ${z.problem ? 'onclick="openModal()"' : ''}>${z.name}</span>`
+        ).join('')}
+      </div>
+    </div>`;
+
+  // Beard tip
+  const beardTipHTML = s.beardTip ? `
+    <div class="beard-tip ${beardMode ? 'visible' : ''}">
+      <div class="beard-tip-header">🧔 Bart-Tipp</div>
+      <div class="beard-tip-text">${s.beardTip}</div>
+    </div>` : '';
+
+  const warnHTML = s.warn ? `<div class="warn ${s.warnClass || ''}">${s.warn}</div>` : '';
+
+  return `
+    <div class="step" onclick="toggleStep(this)">
+      <div class="step-header">
+        <div class="step-num">${s.num}</div>
+        <div>
+          <div class="step-title">${s.name}</div>
+          <div class="step-sub">${s.sub}</div>
+        </div>
+        <div class="toggle-icon">+</div>
+      </div>
+      <div class="step-body">
+        ${amountHTML}
+        <div class="step-desc">${s.desc}</div>
+        ${zonesHTML}
+        ${beardTipHTML}
+        ${warnHTML}
+      </div>
+    </div>`;
+}
+
+function toggleStep(el) { el.classList.toggle('open'); }
+
+function openModal() {
+  event.stopPropagation();
+  document.getElementById('modal').classList.add('open');
+}
+function closeModal(e) {
+  if (e.target === document.getElementById('modal')) document.getElementById('modal').classList.remove('open');
+}
+function openBeardModal() {
+  event.stopPropagation();
+  document.getElementById('beardModal').classList.add('open');
+}
+function closeBeardModal(e) {
+  if (e.target === document.getElementById('beardModal')) document.getElementById('beardModal').classList.remove('open');
+}
+</script>
+
+<!-- PWA: Inline Manifest -->
+<script>
+// Create manifest as blob URL
+const manifest = {
+  name: "The Ordinary – Meine Routine",
+  short_name: "Meine Routine",
+  description: "Tägliche Skincare Routine mit The Ordinary",
+  start_url: "./",
+  display: "standalone",
+  background_color: "#1a1a18",
+  theme_color: "#1a1a18",
+  orientation: "portrait",
+  icons: [
+    {
+      src: "data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%20512%20512%22%3E%0A%20%20%3C%21--%20Background%20--%3E%0A%20%20%3Crect%20width%3D%22512%22%20height%3D%22512%22%20rx%3D%2280%22%20fill%3D%22%231a1a18%22%2F%3E%0A%20%20%0A%20%20%3C%21--%20Neck%20--%3E%0A%20%20%3Crect%20x%3D%22210%22%20y%3D%22340%22%20width%3D%2292%22%20height%3D%2280%22%20rx%3D%2210%22%20fill%3D%22%238B5E3C%22%2F%3E%0A%20%20%0A%20%20%3C%21--%20Head%20--%3E%0A%20%20%3Cellipse%20cx%3D%22256%22%20cy%3D%22210%22%20rx%3D%22110%22%20ry%3D%22125%22%20fill%3D%22%238B5E3C%22%2F%3E%0A%20%20%0A%20%20%3C%21--%20Hair%20--%3E%0A%20%20%3Cellipse%20cx%3D%22256%22%20cy%3D%22105%22%20rx%3D%22110%22%20ry%3D%2250%22%20fill%3D%22%231a1008%22%2F%3E%0A%20%20%3Crect%20x%3D%22146%22%20y%3D%2290%22%20width%3D%2230%22%20height%3D%2280%22%20rx%3D%2215%22%20fill%3D%22%231a1008%22%2F%3E%0A%20%20%3Crect%20x%3D%22336%22%20y%3D%2290%22%20width%3D%2230%22%20height%3D%2280%22%20rx%3D%2215%22%20fill%3D%22%231a1008%22%2F%3E%0A%20%20%3Crect%20x%3D%22146%22%20y%3D%2290%22%20width%3D%22220%22%20height%3D%2240%22%20rx%3D%2210%22%20fill%3D%22%231a1008%22%2F%3E%0A%0A%20%20%3C%21--%20Ears%20--%3E%0A%20%20%3Cellipse%20cx%3D%22148%22%20cy%3D%22220%22%20rx%3D%2218%22%20ry%3D%2222%22%20fill%3D%22%237a5234%22%2F%3E%0A%20%20%3Cellipse%20cx%3D%22364%22%20cy%3D%22220%22%20rx%3D%2218%22%20ry%3D%2222%22%20fill%3D%22%237a5234%22%2F%3E%0A%0A%20%20%3C%21--%20Eyes%20--%3E%0A%20%20%3Cellipse%20cx%3D%22210%22%20cy%3D%22200%22%20rx%3D%2218%22%20ry%3D%2214%22%20fill%3D%22%23fff%22%2F%3E%0A%20%20%3Cellipse%20cx%3D%22302%22%20cy%3D%22200%22%20rx%3D%2218%22%20ry%3D%2214%22%20fill%3D%22%23fff%22%2F%3E%0A%20%20%3Ccircle%20cx%3D%22213%22%20cy%3D%22201%22%20r%3D%2210%22%20fill%3D%22%232a1a08%22%2F%3E%0A%20%20%3Ccircle%20cx%3D%22305%22%20cy%3D%22201%22%20r%3D%2210%22%20fill%3D%22%232a1a08%22%2F%3E%0A%20%20%3Ccircle%20cx%3D%22216%22%20cy%3D%22198%22%20r%3D%223%22%20fill%3D%22%23fff%22%2F%3E%0A%20%20%3Ccircle%20cx%3D%22308%22%20cy%3D%22198%22%20r%3D%223%22%20fill%3D%22%23fff%22%2F%3E%0A%0A%20%20%3C%21--%20Eyebrows%20--%3E%0A%20%20%3Cpath%20d%3D%22M190%20182%20Q210%20172%20230%20178%22%20stroke%3D%22%231a1008%22%20stroke-width%3D%226%22%20fill%3D%22none%22%20stroke-linecap%3D%22round%22%2F%3E%0A%20%20%3Cpath%20d%3D%22M282%20178%20Q302%20172%20322%20182%22%20stroke%3D%22%231a1008%22%20stroke-width%3D%226%22%20fill%3D%22none%22%20stroke-linecap%3D%22round%22%2F%3E%0A%0A%20%20%3C%21--%20Nose%20--%3E%0A%20%20%3Cellipse%20cx%3D%22256%22%20cy%3D%22238%22%20rx%3D%2212%22%20ry%3D%228%22%20fill%3D%22%237a5234%22%2F%3E%0A%20%20%3Cpath%20d%3D%22M244%20238%20Q256%20252%20268%20238%22%20stroke%3D%22%236a4428%22%20stroke-width%3D%223%22%20fill%3D%22none%22%20stroke-linecap%3D%22round%22%2F%3E%0A%0A%20%20%3C%21--%20Mustache%20--%3E%0A%20%20%3Cpath%20d%3D%22M220%20268%20Q256%20278%20292%20268%22%20stroke%3D%22%231a1008%22%20stroke-width%3D%229%22%20fill%3D%22none%22%20stroke-linecap%3D%22round%22%2F%3E%0A%0A%20%20%3C%21--%20Full%20dark%20beard%20--%3E%0A%20%20%3Cpath%20d%3D%22M155%20270%20Q148%20320%20160%20360%20Q200%20410%20256%20415%20Q312%20410%20352%20360%20Q364%20320%20357%20270%20Q320%20285%20256%20288%20Q192%20285%20155%20270Z%22%20fill%3D%22%231a1008%22%2F%3E%0A%20%20%0A%20%20%3C%21--%20Beard%20texture%20highlights%20--%3E%0A%20%20%3Cpath%20d%3D%22M190%20300%20Q200%20340%20210%20370%22%20stroke%3D%22%232a2010%22%20stroke-width%3D%222%22%20fill%3D%22none%22%20opacity%3D%220.5%22%2F%3E%0A%20%20%3Cpath%20d%3D%22M256%20295%20Q256%20345%20256%20380%22%20stroke%3D%22%232a2010%22%20stroke-width%3D%222%22%20fill%3D%22none%22%20opacity%3D%220.5%22%2F%3E%0A%20%20%3Cpath%20d%3D%22M320%20300%20Q310%20340%20300%20370%22%20stroke%3D%22%232a2010%22%20stroke-width%3D%222%22%20fill%3D%22none%22%20opacity%3D%220.5%22%2F%3E%0A%0A%20%20%3C%21--%20Cheek%20beard%20sides%20--%3E%0A%20%20%3Cellipse%20cx%3D%22168%22%20cy%3D%22255%22%20rx%3D%2225%22%20ry%3D%2230%22%20fill%3D%22%231a1008%22%2F%3E%0A%20%20%3Cellipse%20cx%3D%22344%22%20cy%3D%22255%22%20rx%3D%2225%22%20ry%3D%2230%22%20fill%3D%22%231a1008%22%2F%3E%0A%3C%2Fsvg%3E",
+      sizes: "512x512",
+      type: "image/svg+xml",
+      purpose: "any maskable"
+    }
+  ]
+};
+const blob = new Blob([JSON.stringify(manifest)], {type: 'application/json'});
+const manifestURL = URL.createObjectURL(blob);
+document.getElementById('manifest-placeholder').setAttribute('href', manifestURL);
+
+// Service Worker registration
+if ('serviceWorker' in navigator) {
+  const swCode = `
+    const CACHE = 'routine-v3';
+    const FONTS = 'https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;1,300&family=DM+Mono:wght@300;400;500&display=swap';
+
+    self.addEventListener('install', e => {
+      e.waitUntil(
+        caches.open(CACHE).then(c => c.addAll([FONTS]).catch(()=>{}))
+      );
+      self.skipWaiting();
+    });
+
+    self.addEventListener('activate', e => {
+      e.waitUntil(caches.keys().then(keys =>
+        Promise.all(keys.filter(k => k !== CACHE).map(k => caches.delete(k)))
+      ));
+      self.clients.claim();
+    });
+
+    self.addEventListener('fetch', e => {
+      e.respondWith(
+        caches.match(e.request).then(cached => {
+          if (cached) return cached;
+          return fetch(e.request).then(res => {
+            if (res && res.status === 200 && e.request.url.includes('fonts')) {
+              const clone = res.clone();
+              caches.open(CACHE).then(c => c.put(e.request, clone));
+            }
+            return res;
+          }).catch(() => cached || new Response('Offline', {status: 503}));
+        })
+      );
+    });
+  `;
+  const swBlob = new Blob([swCode], {type: 'application/javascript'});
+  const swURL = URL.createObjectURL(swBlob);
+  navigator.serviceWorker.register(swURL, {scope: './'})
+    .then(() => console.log('SW registered'))
+    .catch(e => console.log('SW error:', e));
+}
+</script>
+
+<!-- PWA Install Banner for iOS -->
+<div id="installBanner" style="
+  display:none;
+  position:fixed;
+  bottom: calc(16px + env(safe-area-inset-bottom));
+  left:16px; right:16px;
+  background:#2a2a27;
+  border:1px solid rgba(201,169,110,0.3);
+  border-radius:10px;
+  padding:16px;
+  z-index:200;
+  box-shadow:0 8px 32px rgba(0,0,0,0.5);
+  font-family:'DM Mono',monospace;
+">
+  <div style="display:flex;align-items:center;gap:12px;margin-bottom:12px;">
+    <span style="font-size:28px;">🧔</span>
+    <div>
+      <div style="font-size:11px;letter-spacing:2px;text-transform:uppercase;color:#c9a96e;margin-bottom:2px;">Als App speichern</div>
+      <div style="font-size:10px;color:rgba(220,215,208,0.6);letter-spacing:0.5px;">Offline verfügbar · Kein Browser nötig</div>
+    </div>
+  </div>
+  <div style="font-size:11px;color:rgba(220,215,208,0.8);line-height:1.7;margin-bottom:12px;">
+    Tippe unten auf <span style="display:inline-block;background:rgba(255,255,255,0.1);padding:1px 6px;border-radius:4px;">&#x2B06; Teilen</span> und dann auf <strong style="color:#c9a96e;">„Zum Home-Bildschirm"</strong>
+  </div>
+  <button onclick="document.getElementById('installBanner').style.display='none';" style="
+    width:100%;padding:10px;
+    font-family:'DM Mono',monospace;font-size:10px;letter-spacing:2px;text-transform:uppercase;
+    background:rgba(255,255,255,0.06);color:rgba(220,215,208,0.6);
+    border:1px solid rgba(255,255,255,0.1);border-radius:4px;cursor:pointer;
+  ">Schließen</button>
+</div>
+
+<script>
+// Show iOS install banner if not already installed as app
+const isIOS = /iphone|ipad|ipod/i.test(navigator.userAgent);
+const isStandalone = window.navigator.standalone === true;
+if (!isStandalone) {
+  document.getElementById('installBanner').style.display = 'block';
+}
+</script>
+
+</body>
+</html>
